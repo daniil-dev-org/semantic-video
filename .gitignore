@@ -1,0 +1,13 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Caches
+.pytest_cache/
+.venv/
+venv/
+
+# Service Storage (Temporary uploads, jobs, SQLite db and outputs)
+storage/

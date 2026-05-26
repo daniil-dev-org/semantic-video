@@ -1,0 +1,20 @@
+# Platform Vertical Adaptation Profile
+# Standard vertical presets (9:16 layout conversion).
+
+aspect_ratio:
+  enabled: true
+  target: "9:16"
+
+crop:
+  enabled: true
+  max_percent: 2
+
+color:
+  enabled: true
+  brightness_delta: [-0.02, 0.02]
+  contrast_delta: [-0.02, 0.02]
+  saturation_delta: [-0.05, 0.05]
+
+audio:
+  enabled: true
+  volume_delta: [-0.5, 0.5]

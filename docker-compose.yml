@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  semantic-video-service:
+    build: .
+    container_name: semantic-video-service
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./storage:/app/storage
+      - ./profiles:/app/profiles
+    environment:
+      - THREAD_LIMIT=2
+      - MAX_UPLOAD_SIZE_MB=500
+      - JOB_TIMEOUT_SEC=600
+    restart: always

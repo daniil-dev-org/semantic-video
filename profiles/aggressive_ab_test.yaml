@@ -1,0 +1,25 @@
+# Aggressive A/B Testing Profile
+# Bolder variations for strong visual shifts.
+
+speed:
+  enabled: true
+  factor_min: 0.95
+  factor_max: 1.06
+
+crop:
+  enabled: true
+  max_percent: 4
+
+color:
+  enabled: true
+  brightness_delta: [-0.08, 0.08]
+  contrast_delta: [-0.10, 0.10]
+  saturation_delta: [-0.15, 0.15]
+
+noise:
+  enabled: true
+  strength: [5, 10]
+
+audio:
+  enabled: true
+  volume_delta: [-1.5, 1.5]

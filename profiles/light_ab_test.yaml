@@ -1,0 +1,25 @@
+# Light A/B Testing Profile
+# Safe, visually subtle variations with minimal impact.
+
+speed:
+  enabled: true
+  factor_min: 0.97
+  factor_max: 1.04
+
+crop:
+  enabled: true
+  max_percent: 2
+
+color:
+  enabled: true
+  brightness_delta: [-0.03, 0.03]
+  contrast_delta: [-0.05, 0.05]
+  saturation_delta: [-0.08, 0.08]
+
+noise:
+  enabled: true
+  strength: [2, 5]
+
+audio:
+  enabled: true
+  volume_delta: [-0.5, 0.5]
