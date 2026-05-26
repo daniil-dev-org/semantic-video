@@ -1016,6 +1016,21 @@
             
             const panel = document.getElementById(`source-panel-${tab}`);
             if(panel) panel.classList.add('active');
+            
+            // Reset start button text
+            const startBtn = document.querySelector('.btn-start');
+            if (tab === 'nextcloud' && selectedNextcloudFile) {
+                const filename = selectedNextcloudFile.split('/').pop();
+                startBtn.innerHTML = `
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Запустить обработку: ${filename}
+                `;
+            } else {
+                startBtn.innerHTML = `
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Запустить обработку в Nextcloud
+                `;
+            }
         }
 
         // Engine Selector Card toggle
@@ -1033,6 +1048,13 @@
             document.querySelectorAll('.nc-file-item').forEach(el => el.classList.remove('selected'));
             item.classList.add('selected');
             selectedNextcloudFile = path;
+            
+            const filename = path.split('/').pop();
+            const startBtn = document.querySelector('.btn-start');
+            startBtn.innerHTML = `
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Запустить обработку: ${filename}
+            `;
         }
 
         // Handle local file selection
@@ -1235,16 +1257,19 @@
                         if (o.type === 'variant' || o.type === 'proxy') icon = '🎥';
                         if (o.type === 'sidecar' || o.type === 'quality_report') icon = '📄';
                         
+                        const filename = o.path.split('/').pop();
+                        const downloadUrl = (o.type === 'sidecar') ? `${apiBase}/jobs/${activeJobId}/sidecar` : `${apiBase}/jobs/${activeJobId}/files/${filename}`;
+
                         return `
                             <div class="artifact-card">
                                 <div class="artifact-left">
                                     <div class="artifact-icon">${icon}</div>
                                     <div class="artifact-meta">
-                                        <span class="artifact-name" title="${o.path.split('/').pop()}">${o.path.split('/').pop()}</span>
+                                        <span class="artifact-name" title="${filename}">${filename}</span>
                                         <span class="artifact-sub">${o.type.toUpperCase()} | ${o.size_mb.toFixed(3)} MB</span>
                                     </div>
                                 </div>
-                                <a href="${apiBase}/jobs/${activeJobId}/sidecar" class="artifact-download-btn" target="_blank">
+                                <a href="${downloadUrl}" class="artifact-download-btn" target="_blank">
                                     <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0L8 8m4-4v12"></path></svg>
                                     Открыть
                                 </a>
@@ -1259,13 +1284,13 @@
                 if (resSidecar.ok) {
                     const sidecar = await resSidecar.json();
                     
-                    // Populate features
-                    const frames = sidecar.frame_features || [];
+                    // Populate features (timeline contains frame-by-frame data)
+                    const frames = sidecar.timeline || [];
                     if (frames.length > 0) {
                         const first = frames[0];
-                        document.getElementById('f-brightness').innerText = first.brightness ? first.brightness.toFixed(3) : '-';
-                        document.getElementById('f-blur').innerText = first.blur_score ? first.blur_score.toFixed(3) : '-';
-                        document.getElementById('f-motion').innerText = first.motion_score ? first.motion_score.toFixed(3) : '-';
+                        document.getElementById('f-brightness').innerText = first.brightness !== undefined ? first.brightness.toFixed(3) : '-';
+                        document.getElementById('f-blur').innerText = first.blur_score !== undefined ? first.blur_score.toFixed(3) : '-';
+                        document.getElementById('f-motion').innerText = first.motion_score !== undefined ? first.motion_score.toFixed(3) : '-';
                         document.getElementById('f-faces').innerText = first.face_detected ? 'ОБНАРУЖЕНО (Face)' : 'Нет лиц';
                         document.getElementById('f-faces').style.color = first.face_detected ? 'var(--success)' : 'var(--text-muted)';
                     }

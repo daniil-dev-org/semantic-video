@@ -245,3 +245,22 @@ def upload_and_start_job(
     background_tasks.add_task(trigger_worker_wakeup)
     
     return JobCreateResponse(job_id=job_id, status=job.status)
+
+
+@router.get("/{job_id}/files/{filename}")
+def get_job_file(job_id: str, filename: str):
+    """Serve a specific generated output file for a job."""
+    from ..core.config import OUTPUTS_DIR
+    file_path = OUTPUTS_DIR / job_id / filename
+    if not file_path.exists():
+        raise HTTPException(status_code=404, detail=f"File not found on disk at {file_path}")
+    
+    # Map common extensions to mime types
+    ext = file_path.suffix.lower()
+    media_type = "application/octet-stream"
+    if ext == ".mp4":
+        media_type = "video/mp4"
+    elif ext == ".json":
+        media_type = "application/json"
+        
+    return FileResponse(file_path, media_type=media_type, filename=filename)
