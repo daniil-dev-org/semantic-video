@@ -1056,7 +1056,7 @@
         async function fetchNextcloudFiles() {
             const container = document.getElementById('nextcloud-files-container');
             try {
-                const response = await fetch(`${apiBase}/nextcloud/files`);
+                const response = await fetch(`${apiBase}/jobs/nextcloud/files`);
                 if (!response.ok) throw new Error('Failed to load nextcloud files');
                 const files = await response.json();
                 
@@ -1123,7 +1123,7 @@
                     
                     updateStatusDisplay('QUEUED', 'Загрузка видеофайла на сервер...', 5.0);
                     
-                    response = await fetch(`${apiBase}/upload`, {
+                    response = await fetch(`${apiBase}/jobs/upload`, {
                         method: 'POST',
                         body: formData
                     });
