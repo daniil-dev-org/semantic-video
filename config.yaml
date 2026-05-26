@@ -1,0 +1,60 @@
+# ── STP v0.1 — Semantic Trend PoC — Configuration ──
+
+proxy:
+  height: 144
+  fps: 5
+  codec: "libx264"
+  crf: 38
+  preset: "veryfast"
+  keep_audio: false
+
+video_features:
+  sample_fps: 5
+  keyframe_count: 5
+  scene_cut_threshold: 0.35
+  motion_threshold: 0.18
+  enable_face_detection: true
+  frame_sample_rate: 1
+  enable_edge_density: true
+  enable_text_like_regions: true
+  enable_hook_features: true
+  enable_color_buckets: true
+  enable_visual_tokens: true
+
+dataset:
+  velocity_windows_hours: [1, 6, 24]
+  include_audio: true
+  include_hashtags: true
+  category_percentiles: true
+
+data_quality:
+  min_days_covered: 30
+  min_posts: 1000
+  min_snapshots: 3000
+  min_median_snapshots_per_post: 3
+  min_positive_cases: 100
+
+validation:
+  train_window_days: 30
+  test_horizon_hours: 72
+  step_days: 1
+  final_holdout_ratio: 0.30
+  require_holdout_pass: true
+  require_preregistered_for_accept: true
+
+feature_groups:
+  use_metadata_features: true
+  use_video_features: true
+  use_entity_features: true
+
+datasets:
+  normalized_schema_version: "0.2"
+
+scoring:
+  ml_model: "hist_gradient_boosting"
+  max_iter: 100
+  learning_rate: 0.1
+
+reports:
+  format: "markdown"
+  include_charts: true

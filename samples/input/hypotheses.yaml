@@ -1,0 +1,30 @@
+hypotheses:
+  - hypothesis_id: h_001
+    name: "High motion videos grow faster"
+    filter:
+      avg_motion_score: { op: ">", value: 0.0 }
+    signal_window_hours: 24
+    prediction_horizon_hours: 72
+    target:
+      name: "top_growth_72h"
+    success_criteria:
+      min_sample_size: 10
+      min_lift: 1.1
+      min_precision_at_50: 0.15
+    preregistered: true
+    exploratory: false
+
+  - hypothesis_id: h_002
+    name: "High comments growth correlate with breakout"
+    filter:
+      engagement_delta_24h: { op: ">", value: 0.0 }
+    signal_window_hours: 24
+    prediction_horizon_hours: 72
+    target:
+      name: "top_growth_72h"
+    success_criteria:
+      min_sample_size: 10
+      min_lift: 1.1
+      min_precision_at_50: 0.15
+    preregistered: true
+    exploratory: false

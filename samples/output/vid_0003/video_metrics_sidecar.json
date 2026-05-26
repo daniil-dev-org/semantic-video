@@ -1,0 +1,658 @@
+{
+  "stp_version": "0.1",
+  "profile": "offline_trend_poc",
+  "created_at": "2026-05-25T07:56:36.949462+00:00",
+  "asset": {
+    "asset_id": "vid_0003",
+    "source_name": "vid_0003.mp4",
+    "duration_ms": 5000,
+    "source_width": 640,
+    "source_height": 480,
+    "source_fps": 24.0
+  },
+  "proxy_stream": {
+    "uri": "proxy_144p.mp4",
+    "codec": "h264",
+    "height": 144,
+    "fps": 5,
+    "purpose": "feature_extraction"
+  },
+  "timebase": {
+    "unit": "ms"
+  },
+  "video_features": {
+    "global": {
+      "duration_ms": 5000,
+      "sampled_frames": 24,
+      "avg_brightness": 0.5747,
+      "std_brightness": 0.0035,
+      "avg_contrast": 0.1089,
+      "std_contrast": 0.025,
+      "avg_saturation": 0.7013,
+      "std_saturation": 0.0061,
+      "avg_motion_score": 0.0139,
+      "max_motion_score": 0.0253,
+      "cut_count": 0,
+      "cuts_per_second": 0.0,
+      "visual_change_score": 0.0016,
+      "dominant_colors": [
+        [
+          32,
+          160,
+          64
+        ]
+      ],
+      "face_presence_ratio": 1.0,
+      "person_presence_ratio": null,
+      "text_region_ratio": null,
+      "blur_score_avg": 0.0992,
+      "sharpness_score_avg": 0.0992,
+      "edge_density_avg": 0.0049,
+      "text_like_region_ratio": 0.0054,
+      "hook_motion_0_1s": 0.0138,
+      "hook_motion_0_3s": 0.0172,
+      "hook_motion_0_5s": 0.0139,
+      "hook_cut_count_0_3s": 0,
+      "hook_brightness_delta_0_3s": 0.0101,
+      "hook_saturation_delta_0_3s": 0.0179,
+      "first_second_visual_change": 0.0011,
+      "avg_shot_length_sec": 5.0,
+      "median_shot_length_sec": 5.0,
+      "min_shot_length_sec": 5.0,
+      "max_shot_length_sec": 5.0
+    },
+    "timeline": [
+      {
+        "t": 0,
+        "brightness": 0.5738,
+        "contrast": 0.1054,
+        "saturation": 0.703,
+        "motion_score": 0.0,
+        "cut": false,
+        "blur_score": 0.1038,
+        "dominant_color": [
+          58,
+          190,
+          92
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3031,
+          0.2292,
+          0.2594,
+          0.3458
+        ],
+        "edge_density": 0.0026,
+        "text_like_region_ratio": 0.0054
+      },
+      {
+        "t": 208,
+        "brightness": 0.5748,
+        "contrast": 0.1132,
+        "saturation": 0.701,
+        "motion_score": 0.0149,
+        "cut": false,
+        "blur_score": 0.1023,
+        "dominant_color": [
+          60,
+          190,
+          93
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3062,
+          0.2333,
+          0.2531,
+          0.3375
+        ],
+        "edge_density": 0.0067,
+        "text_like_region_ratio": 0.0057
+      },
+      {
+        "t": 416,
+        "brightness": 0.5762,
+        "contrast": 0.1211,
+        "saturation": 0.6987,
+        "motion_score": 0.017,
+        "cut": false,
+        "blur_score": 0.1051,
+        "dominant_color": [
+          60,
+          190,
+          94
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3031,
+          0.225,
+          0.2625,
+          0.35
+        ],
+        "edge_density": 0.0069,
+        "text_like_region_ratio": 0.0061
+      },
+      {
+        "t": 625,
+        "brightness": 0.577,
+        "contrast": 0.1273,
+        "saturation": 0.6971,
+        "motion_score": 0.0192,
+        "cut": false,
+        "blur_score": 0.1076,
+        "dominant_color": [
+          61,
+          191,
+          94
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3,
+          0.225,
+          0.2625,
+          0.35
+        ],
+        "edge_density": 0.007,
+        "text_like_region_ratio": 0.0063
+      },
+      {
+        "t": 833,
+        "brightness": 0.5782,
+        "contrast": 0.1339,
+        "saturation": 0.695,
+        "motion_score": 0.0179,
+        "cut": false,
+        "blur_score": 0.1106,
+        "dominant_color": [
+          60,
+          191,
+          94
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3062,
+          0.2292,
+          0.2531,
+          0.3375
+        ],
+        "edge_density": 0.0071,
+        "text_like_region_ratio": 0.0067
+      },
+      {
+        "t": 1041,
+        "brightness": 0.5793,
+        "contrast": 0.1404,
+        "saturation": 0.6931,
+        "motion_score": 0.0223,
+        "cut": false,
+        "blur_score": 0.1143,
+        "dominant_color": [
+          62,
+          191,
+          95
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3062,
+          0.2292,
+          0.2531,
+          0.3375
+        ],
+        "edge_density": 0.0034,
+        "text_like_region_ratio": 0.007
+      },
+      {
+        "t": 1250,
+        "brightness": 0.5769,
+        "contrast": 0.1262,
+        "saturation": 0.6974,
+        "motion_score": 0.0222,
+        "cut": false,
+        "blur_score": 0.1022,
+        "dominant_color": [
+          60,
+          190,
+          94
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3094,
+          0.2458,
+          0.2438,
+          0.325
+        ],
+        "edge_density": 0.0063,
+        "text_like_region_ratio": 0.0065
+      },
+      {
+        "t": 1458,
+        "brightness": 0.5755,
+        "contrast": 0.1181,
+        "saturation": 0.6998,
+        "motion_score": 0.0184,
+        "cut": false,
+        "blur_score": 0.1012,
+        "dominant_color": [
+          60,
+          190,
+          93
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3125,
+          0.2417,
+          0.2469,
+          0.3292
+        ],
+        "edge_density": 0.0065,
+        "text_like_region_ratio": 0.0067
+      },
+      {
+        "t": 1666,
+        "brightness": 0.5791,
+        "contrast": 0.1379,
+        "saturation": 0.6937,
+        "motion_score": 0.0139,
+        "cut": false,
+        "blur_score": 0.1075,
+        "dominant_color": [
+          63,
+          191,
+          95
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3031,
+          0.2292,
+          0.2562,
+          0.3417
+        ],
+        "edge_density": 0.0069,
+        "text_like_region_ratio": 0.0071
+      },
+      {
+        "t": 1875,
+        "brightness": 0.5799,
+        "contrast": 0.1436,
+        "saturation": 0.692,
+        "motion_score": 0.0249,
+        "cut": false,
+        "blur_score": 0.1118,
+        "dominant_color": [
+          62,
+          191,
+          95
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3031,
+          0.225,
+          0.2562,
+          0.3417
+        ],
+        "edge_density": 0.0071,
+        "text_like_region_ratio": 0.0071
+      },
+      {
+        "t": 2083,
+        "brightness": 0.5795,
+        "contrast": 0.1404,
+        "saturation": 0.6929,
+        "motion_score": 0.0253,
+        "cut": false,
+        "blur_score": 0.1148,
+        "dominant_color": [
+          62,
+          191,
+          95
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3031,
+          0.225,
+          0.2625,
+          0.35
+        ],
+        "edge_density": 0.0072,
+        "text_like_region_ratio": 0.0069
+      },
+      {
+        "t": 2291,
+        "brightness": 0.5786,
+        "contrast": 0.1359,
+        "saturation": 0.6944,
+        "motion_score": 0.0184,
+        "cut": false,
+        "blur_score": 0.1118,
+        "dominant_color": [
+          61,
+          191,
+          94
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3031,
+          0.2292,
+          0.2594,
+          0.3458
+        ],
+        "edge_density": 0.0071,
+        "text_like_region_ratio": 0.0068
+      },
+      {
+        "t": 2500,
+        "brightness": 0.5772,
+        "contrast": 0.1273,
+        "saturation": 0.6969,
+        "motion_score": 0.0126,
+        "cut": false,
+        "blur_score": 0.1082,
+        "dominant_color": [
+          60,
+          190,
+          94
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3031,
+          0.2292,
+          0.2562,
+          0.3417
+        ],
+        "edge_density": 0.007,
+        "text_like_region_ratio": 0.0064
+      },
+      {
+        "t": 2708,
+        "brightness": 0.5762,
+        "contrast": 0.1212,
+        "saturation": 0.6987,
+        "motion_score": 0.0192,
+        "cut": false,
+        "blur_score": 0.1069,
+        "dominant_color": [
+          60,
+          190,
+          93
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3031,
+          0.225,
+          0.2594,
+          0.3458
+        ],
+        "edge_density": 0.0068,
+        "text_like_region_ratio": 0.0061
+      },
+      {
+        "t": 2916,
+        "brightness": 0.5698,
+        "contrast": 0.0717,
+        "saturation": 0.7099,
+        "motion_score": 0.0122,
+        "cut": false,
+        "blur_score": 0.0761,
+        "dominant_color": [
+          57,
+          189,
+          91
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3062,
+          0.2292,
+          0.2531,
+          0.3375
+        ],
+        "edge_density": 0.0012,
+        "text_like_region_ratio": 0.0026
+      },
+      {
+        "t": 3125,
+        "brightness": 0.5739,
+        "contrast": 0.1055,
+        "saturation": 0.7028,
+        "motion_score": 0.0099,
+        "cut": false,
+        "blur_score": 0.1006,
+        "dominant_color": [
+          60,
+          190,
+          93
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3062,
+          0.2333,
+          0.2531,
+          0.3375
+        ],
+        "edge_density": 0.0026,
+        "text_like_region_ratio": 0.0054
+      },
+      {
+        "t": 3333,
+        "brightness": 0.5698,
+        "contrast": 0.0716,
+        "saturation": 0.7098,
+        "motion_score": 0.0099,
+        "cut": false,
+        "blur_score": 0.0756,
+        "dominant_color": [
+          57,
+          190,
+          91
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3062,
+          0.2292,
+          0.2562,
+          0.3417
+        ],
+        "edge_density": 0.0012,
+        "text_like_region_ratio": 0.0025
+      },
+      {
+        "t": 3541,
+        "brightness": 0.5722,
+        "contrast": 0.0929,
+        "saturation": 0.7058,
+        "motion_score": 0.0084,
+        "cut": false,
+        "blur_score": 0.0985,
+        "dominant_color": [
+          58,
+          190,
+          92
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3,
+          0.225,
+          0.2656,
+          0.3542
+        ],
+        "edge_density": 0.0023,
+        "text_like_region_ratio": 0.0047
+      },
+      {
+        "t": 3750,
+        "brightness": 0.5714,
+        "contrast": 0.0867,
+        "saturation": 0.7071,
+        "motion_score": 0.0099,
+        "cut": false,
+        "blur_score": 0.0917,
+        "dominant_color": [
+          58,
+          190,
+          92
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3062,
+          0.2292,
+          0.2562,
+          0.3417
+        ],
+        "edge_density": 0.0021,
+        "text_like_region_ratio": 0.0043
+      },
+      {
+        "t": 3958,
+        "brightness": 0.5711,
+        "contrast": 0.0824,
+        "saturation": 0.7077,
+        "motion_score": 0.0087,
+        "cut": false,
+        "blur_score": 0.0877,
+        "dominant_color": [
+          57,
+          190,
+          91
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3031,
+          0.2292,
+          0.2594,
+          0.3458
+        ],
+        "edge_density": 0.0058,
+        "text_like_region_ratio": 0.0041
+      },
+      {
+        "t": 4166,
+        "brightness": 0.5705,
+        "contrast": 0.0788,
+        "saturation": 0.7087,
+        "motion_score": 0.0079,
+        "cut": false,
+        "blur_score": 0.0861,
+        "dominant_color": [
+          57,
+          190,
+          91
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3031,
+          0.225,
+          0.2625,
+          0.35
+        ],
+        "edge_density": 0.0057,
+        "text_like_region_ratio": 0.0038
+      },
+      {
+        "t": 4375,
+        "brightness": 0.5706,
+        "contrast": 0.0777,
+        "saturation": 0.7085,
+        "motion_score": 0.0074,
+        "cut": false,
+        "blur_score": 0.0863,
+        "dominant_color": [
+          57,
+          190,
+          91
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3031,
+          0.225,
+          0.2594,
+          0.3458
+        ],
+        "edge_density": 0.0056,
+        "text_like_region_ratio": 0.0036
+      },
+      {
+        "t": 4583,
+        "brightness": 0.5704,
+        "contrast": 0.0768,
+        "saturation": 0.7089,
+        "motion_score": 0.0072,
+        "cut": false,
+        "blur_score": 0.0851,
+        "dominant_color": [
+          58,
+          190,
+          92
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3031,
+          0.225,
+          0.2562,
+          0.3417
+        ],
+        "edge_density": 0.0017,
+        "text_like_region_ratio": 0.0036
+      },
+      {
+        "t": 4791,
+        "brightness": 0.5706,
+        "contrast": 0.0769,
+        "saturation": 0.7088,
+        "motion_score": 0.0071,
+        "cut": false,
+        "blur_score": 0.0838,
+        "dominant_color": [
+          58,
+          190,
+          92
+        ],
+        "face_detected": true,
+        "face_bbox": [
+          0.3,
+          0.225,
+          0.2594,
+          0.3458
+        ],
+        "edge_density": 0.0017,
+        "text_like_region_ratio": 0.0036
+      }
+    ],
+    "keyframes": [
+      {
+        "index": 0,
+        "t": 0,
+        "filename": "frame_000001.jpg"
+      },
+      {
+        "index": 1,
+        "t": 208,
+        "filename": "frame_000005.jpg"
+      },
+      {
+        "index": 2,
+        "t": 416,
+        "filename": "frame_000009.jpg"
+      },
+      {
+        "index": 3,
+        "t": 625,
+        "filename": "frame_000013.jpg"
+      },
+      {
+        "index": 4,
+        "t": 833,
+        "filename": "frame_000017.jpg"
+      }
+    ],
+    "visual_tokens": [],
+    "detectors": [
+      {
+        "name": "opencv_haar",
+        "type": "face"
+      }
+    ]
+  },
+  "integrity": {
+    "source_sha256": "f54364441ecbc5897362b5f0adb989138de08705ead4186e035d8eab4de9b378",
+    "proxy_sha256": "9fdda0507c2e7718d3079afccc49e246a9224b054d628a1abf3665705d55f9d0",
+    "sidecar_sha256": "0b23c59c3e0dcea319ed901c231e537295964b0fa1930889e42b635764467818"
+  }
+}

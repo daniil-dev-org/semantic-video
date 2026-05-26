@@ -1,0 +1,814 @@
+{
+  "post_id": {
+    "dtype": "str",
+    "n_unique": 100,
+    "n_null": 0,
+    "sample_values": [
+      "vid_0001",
+      "vid_0001",
+      "vid_0001"
+    ]
+  },
+  "title": {
+    "dtype": "str",
+    "n_unique": 100,
+    "n_null": 0,
+    "sample_values": [
+      "Test Video 1",
+      "Test Video 1",
+      "Test Video 1"
+    ]
+  },
+  "published_at": {
+    "dtype": "datetime64[us, UTC]",
+    "n_unique": 9,
+    "n_null": 0,
+    "sample_values": [
+      "2022-12-24 00:00:00+00:00",
+      "2022-12-24 00:00:00+00:00",
+      "2022-12-24 00:00:00+00:00"
+    ]
+  },
+  "author_id": {
+    "dtype": "str",
+    "n_unique": 10,
+    "n_null": 0,
+    "sample_values": [
+      "chan_1",
+      "chan_1",
+      "chan_1"
+    ]
+  },
+  "channelTitle": {
+    "dtype": "str",
+    "n_unique": 10,
+    "n_null": 0,
+    "sample_values": [
+      "Channel 1",
+      "Channel 1",
+      "Channel 1"
+    ]
+  },
+  "category": {
+    "dtype": "int64",
+    "n_unique": 29,
+    "n_null": 0,
+    "sample_values": [
+      15,
+      19,
+      4
+    ]
+  },
+  "collected_at": {
+    "dtype": "datetime64[us, UTC]",
+    "n_unique": 18,
+    "n_null": 0,
+    "sample_values": [
+      "2022-12-24 00:00:00+00:00",
+      "2022-12-25 00:00:00+00:00",
+      "2022-12-26 00:00:00+00:00"
+    ]
+  },
+  "hashtags": {
+    "dtype": "str",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      "test|video|trend",
+      "test|video|trend",
+      "test|video|trend"
+    ]
+  },
+  "views": {
+    "dtype": "int64",
+    "n_unique": 999,
+    "n_null": 0,
+    "sample_values": [
+      38609,
+      47123,
+      57514
+    ]
+  },
+  "likes": {
+    "dtype": "int64",
+    "n_unique": 943,
+    "n_null": 0,
+    "sample_values": [
+      1930,
+      2356,
+      2875
+    ]
+  },
+  "dislikes": {
+    "dtype": "int64",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      0,
+      0,
+      0
+    ]
+  },
+  "comments": {
+    "dtype": "int64",
+    "n_unique": 608,
+    "n_null": 0,
+    "sample_values": [
+      193,
+      235,
+      287
+    ]
+  },
+  "thumbnail_link": {
+    "dtype": "str",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      "http://example.com/thumb.jpg",
+      "http://example.com/thumb.jpg",
+      "http://example.com/thumb.jpg"
+    ]
+  },
+  "comments_disabled": {
+    "dtype": "bool",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      false,
+      false,
+      false
+    ]
+  },
+  "ratings_disabled": {
+    "dtype": "bool",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      false,
+      false,
+      false
+    ]
+  },
+  "caption": {
+    "dtype": "str",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      "Test description",
+      "Test description",
+      "Test description"
+    ]
+  },
+  "platform": {
+    "dtype": "str",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      "youtube",
+      "youtube",
+      "youtube"
+    ]
+  },
+  "dataset_source": {
+    "dtype": "str",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      "youtube_trending_kaggle",
+      "youtube_trending_kaggle",
+      "youtube_trending_kaggle"
+    ]
+  },
+  "is_synthetic": {
+    "dtype": "bool",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      false,
+      false,
+      false
+    ]
+  },
+  "entity_type": {
+    "dtype": "object",
+    "n_unique": 0,
+    "n_null": 1000,
+    "sample_values": []
+  },
+  "entity_id": {
+    "dtype": "object",
+    "n_unique": 0,
+    "n_null": 1000,
+    "sample_values": []
+  },
+  "shares": {
+    "dtype": "int64",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      0,
+      0,
+      0
+    ]
+  },
+  "saves": {
+    "dtype": "int64",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      0,
+      0,
+      0
+    ]
+  },
+  "audio_id": {
+    "dtype": "object",
+    "n_unique": 0,
+    "n_null": 1000,
+    "sample_values": []
+  },
+  "language": {
+    "dtype": "object",
+    "n_unique": 0,
+    "n_null": 1000,
+    "sample_values": []
+  },
+  "country": {
+    "dtype": "object",
+    "n_unique": 0,
+    "n_null": 1000,
+    "sample_values": []
+  },
+  "video_path": {
+    "dtype": "object",
+    "n_unique": 0,
+    "n_null": 1000,
+    "sample_values": []
+  },
+  "dataset_mode": {
+    "dtype": "str",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      "real",
+      "real",
+      "real"
+    ]
+  },
+  "as_of_time": {
+    "dtype": "datetime64[us, UTC]",
+    "n_unique": 18,
+    "n_null": 0,
+    "sample_values": [
+      "2022-12-24 00:00:00+00:00",
+      "2022-12-25 00:00:00+00:00",
+      "2022-12-26 00:00:00+00:00"
+    ]
+  },
+  "feature_set_version": {
+    "dtype": "str",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      "1.0.0",
+      "1.0.0",
+      "1.0.0"
+    ]
+  },
+  "engagement_now": {
+    "dtype": "int64",
+    "n_unique": 943,
+    "n_null": 0,
+    "sample_values": [
+      2123,
+      2591,
+      3162
+    ]
+  },
+  "views_now": {
+    "dtype": "int64",
+    "n_unique": 999,
+    "n_null": 0,
+    "sample_values": [
+      38609,
+      47123,
+      57514
+    ]
+  },
+  "likes_now": {
+    "dtype": "int64",
+    "n_unique": 943,
+    "n_null": 0,
+    "sample_values": [
+      1930,
+      2356,
+      2875
+    ]
+  },
+  "comments_now": {
+    "dtype": "int64",
+    "n_unique": 608,
+    "n_null": 0,
+    "sample_values": [
+      193,
+      235,
+      287
+    ]
+  },
+  "shares_now": {
+    "dtype": "int64",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      0,
+      0,
+      0
+    ]
+  },
+  "age_hours_since_publish": {
+    "dtype": "float64",
+    "n_unique": 10,
+    "n_null": 0,
+    "sample_values": [
+      0.0,
+      24.0,
+      48.0
+    ]
+  },
+  "engagement_rate": {
+    "dtype": "float64",
+    "n_unique": 13,
+    "n_null": 0,
+    "sample_values": [
+      0.055,
+      0.055,
+      0.055
+    ]
+  },
+  "views_delta_1h": {
+    "dtype": "float64",
+    "n_unique": 884,
+    "n_null": 0,
+    "sample_values": [
+      0.0,
+      8514.0,
+      10391.0
+    ]
+  },
+  "engagement_delta_1h": {
+    "dtype": "float64",
+    "n_unique": 713,
+    "n_null": 0,
+    "sample_values": [
+      0.0,
+      468.0,
+      571.0
+    ]
+  },
+  "views_delta_6h": {
+    "dtype": "float64",
+    "n_unique": 884,
+    "n_null": 0,
+    "sample_values": [
+      0.0,
+      8514.0,
+      10391.0
+    ]
+  },
+  "engagement_delta_6h": {
+    "dtype": "float64",
+    "n_unique": 713,
+    "n_null": 0,
+    "sample_values": [
+      0.0,
+      468.0,
+      571.0
+    ]
+  },
+  "views_delta_24h": {
+    "dtype": "float64",
+    "n_unique": 884,
+    "n_null": 0,
+    "sample_values": [
+      0.0,
+      8514.0,
+      10391.0
+    ]
+  },
+  "engagement_delta_24h": {
+    "dtype": "float64",
+    "n_unique": 713,
+    "n_null": 0,
+    "sample_values": [
+      0.0,
+      468.0,
+      571.0
+    ]
+  },
+  "views_velocity_1h": {
+    "dtype": "float64",
+    "n_unique": 884,
+    "n_null": 0,
+    "sample_values": [
+      0.0,
+      8514.0,
+      10391.0
+    ]
+  },
+  "views_velocity_6h": {
+    "dtype": "float64",
+    "n_unique": 884,
+    "n_null": 0,
+    "sample_values": [
+      0.0,
+      1419.0,
+      1731.83
+    ]
+  },
+  "views_acceleration_6h": {
+    "dtype": "float64",
+    "n_unique": 727,
+    "n_null": 0,
+    "sample_values": [
+      0.0,
+      0.0,
+      312.83
+    ]
+  },
+  "max_snapshot_used_at": {
+    "dtype": "datetime64[us]",
+    "n_unique": 17,
+    "n_null": 100,
+    "sample_values": [
+      "2022-12-25 00:00:00",
+      "2022-12-26 00:00:00",
+      "2022-12-27 00:00:00"
+    ]
+  },
+  "hashtag_count": {
+    "dtype": "int64",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      1,
+      1,
+      1
+    ]
+  },
+  "audio_id_present": {
+    "dtype": "int64",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      0,
+      0,
+      0
+    ]
+  },
+  "avg_brightness": {
+    "dtype": "float64",
+    "n_unique": 4,
+    "n_null": 0,
+    "sample_values": [
+      0.4115,
+      0.4115,
+      0.4115
+    ]
+  },
+  "avg_contrast": {
+    "dtype": "float64",
+    "n_unique": 4,
+    "n_null": 0,
+    "sample_values": [
+      0.195,
+      0.195,
+      0.195
+    ]
+  },
+  "avg_saturation": {
+    "dtype": "float64",
+    "n_unique": 4,
+    "n_null": 0,
+    "sample_values": [
+      0.6347,
+      0.6347,
+      0.6347
+    ]
+  },
+  "avg_motion_score": {
+    "dtype": "float64",
+    "n_unique": 4,
+    "n_null": 0,
+    "sample_values": [
+      0.0181,
+      0.0181,
+      0.0181
+    ]
+  },
+  "max_motion_score": {
+    "dtype": "float64",
+    "n_unique": 4,
+    "n_null": 0,
+    "sample_values": [
+      0.0343,
+      0.0343,
+      0.0343
+    ]
+  },
+  "cut_count": {
+    "dtype": "int64",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      0,
+      0,
+      0
+    ]
+  },
+  "cuts_per_second": {
+    "dtype": "float64",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "visual_change_score": {
+    "dtype": "float64",
+    "n_unique": 4,
+    "n_null": 0,
+    "sample_values": [
+      0.0022,
+      0.0022,
+      0.0022
+    ]
+  },
+  "dominant_color_bucket": {
+    "dtype": "int64",
+    "n_unique": 4,
+    "n_null": 0,
+    "sample_values": [
+      1289632,
+      1289632,
+      1289632
+    ]
+  },
+  "face_presence_ratio": {
+    "dtype": "float64",
+    "n_unique": 2,
+    "n_null": 0,
+    "sample_values": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "blur_score_avg": {
+    "dtype": "float64",
+    "n_unique": 4,
+    "n_null": 0,
+    "sample_values": [
+      0.1514,
+      0.1514,
+      0.1514
+    ]
+  },
+  "sharpness_score_avg": {
+    "dtype": "float64",
+    "n_unique": 4,
+    "n_null": 0,
+    "sample_values": [
+      0.1514,
+      0.1514,
+      0.1514
+    ]
+  },
+  "category_percentile_views_now": {
+    "dtype": "float64",
+    "n_unique": 424,
+    "n_null": 0,
+    "sample_values": [
+      0.4230769230769231,
+      0.3888888888888889,
+      0.5
+    ]
+  },
+  "category_percentile_growth_24h": {
+    "dtype": "float64",
+    "n_unique": 408,
+    "n_null": 0,
+    "sample_values": [
+      0.11538461538461539,
+      0.4444444444444444,
+      0.5
+    ]
+  },
+  "author_previous_posts_count": {
+    "dtype": "int64",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      10,
+      10,
+      10
+    ]
+  },
+  "visual_token": {
+    "dtype": "str",
+    "n_unique": 3,
+    "n_null": 0,
+    "sample_values": [
+      "low_motion_slow_cuts_has_face_med_bright",
+      "low_motion_slow_cuts_has_face_med_bright",
+      "low_motion_slow_cuts_has_face_med_bright"
+    ]
+  },
+  "audio_posts_count_lifetime": {
+    "dtype": "float64",
+    "n_unique": 0,
+    "n_null": 1000,
+    "sample_values": []
+  },
+  "primary_hashtag": {
+    "dtype": "object",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      "test|video|trend",
+      "test|video|trend",
+      "test|video|trend"
+    ]
+  },
+  "hashtag_posts_count_lifetime": {
+    "dtype": "int64",
+    "n_unique": 1000,
+    "n_null": 0,
+    "sample_values": [
+      13,
+      63,
+      85
+    ]
+  },
+  "visual_token_posts_count_lifetime": {
+    "dtype": "int64",
+    "n_unique": 970,
+    "n_null": 0,
+    "sample_values": [
+      1,
+      2,
+      3
+    ]
+  },
+  "top_growth_24h": {
+    "dtype": "int64",
+    "n_unique": 2,
+    "n_null": 0,
+    "sample_values": [
+      0,
+      0,
+      0
+    ]
+  },
+  "views_growth_multiplier_24h": {
+    "dtype": "float64",
+    "n_unique": 42,
+    "n_null": 0,
+    "sample_values": [
+      1.22,
+      1.22,
+      1.22
+    ]
+  },
+  "top_growth_48h": {
+    "dtype": "int64",
+    "n_unique": 2,
+    "n_null": 0,
+    "sample_values": [
+      0,
+      0,
+      0
+    ]
+  },
+  "views_growth_multiplier_48h": {
+    "dtype": "float64",
+    "n_unique": 82,
+    "n_null": 0,
+    "sample_values": [
+      1.49,
+      1.49,
+      1.49
+    ]
+  },
+  "top_growth_72h": {
+    "dtype": "int64",
+    "n_unique": 2,
+    "n_null": 0,
+    "sample_values": [
+      0,
+      0,
+      0
+    ]
+  },
+  "views_growth_multiplier_72h": {
+    "dtype": "float64",
+    "n_unique": 122,
+    "n_null": 0,
+    "sample_values": [
+      1.82,
+      1.82,
+      1.82
+    ]
+  },
+  "target_window_start_24h": {
+    "dtype": "datetime64[us]",
+    "n_unique": 18,
+    "n_null": 0,
+    "sample_values": [
+      "2022-12-24 00:00:00",
+      "2022-12-25 00:00:00",
+      "2022-12-26 00:00:00"
+    ]
+  },
+  "target_window_end_24h": {
+    "dtype": "datetime64[us]",
+    "n_unique": 18,
+    "n_null": 0,
+    "sample_values": [
+      "2022-12-25 00:00:00",
+      "2022-12-26 00:00:00",
+      "2022-12-27 00:00:00"
+    ]
+  },
+  "target_window_start_48h": {
+    "dtype": "datetime64[us]",
+    "n_unique": 18,
+    "n_null": 0,
+    "sample_values": [
+      "2022-12-24 00:00:00",
+      "2022-12-25 00:00:00",
+      "2022-12-26 00:00:00"
+    ]
+  },
+  "target_window_end_48h": {
+    "dtype": "datetime64[us]",
+    "n_unique": 18,
+    "n_null": 0,
+    "sample_values": [
+      "2022-12-26 00:00:00",
+      "2022-12-27 00:00:00",
+      "2022-12-28 00:00:00"
+    ]
+  },
+  "target_window_start_72h": {
+    "dtype": "datetime64[us]",
+    "n_unique": 18,
+    "n_null": 0,
+    "sample_values": [
+      "2022-12-24 00:00:00",
+      "2022-12-25 00:00:00",
+      "2022-12-26 00:00:00"
+    ]
+  },
+  "target_window_end_72h": {
+    "dtype": "datetime64[us]",
+    "n_unique": 18,
+    "n_null": 0,
+    "sample_values": [
+      "2022-12-27 00:00:00",
+      "2022-12-28 00:00:00",
+      "2022-12-29 00:00:00"
+    ]
+  },
+  "views_mult_gt_3x_24h": {
+    "dtype": "int64",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      0,
+      0,
+      0
+    ]
+  },
+  "views_mult_gt_3x_48h": {
+    "dtype": "int64",
+    "n_unique": 1,
+    "n_null": 0,
+    "sample_values": [
+      0,
+      0,
+      0
+    ]
+  },
+  "views_mult_gt_3x_72h": {
+    "dtype": "int64",
+    "n_unique": 2,
+    "n_null": 0,
+    "sample_values": [
+      0,
+      0,
+      0
+    ]
+  }
+}

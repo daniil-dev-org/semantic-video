@@ -1,0 +1,49 @@
+{
+  "stp_version": "0.1",
+  "report_type": "hypothesis_validation",
+  "is_synthetic_data": false,
+  "summary": {
+    "total_hypotheses": 3,
+    "accepted": 0,
+    "rejected": 0,
+    "inconclusive": 3
+  },
+  "hypotheses": [
+    {
+      "hypothesis_id": "h_001",
+      "name": "High motion videos grow faster",
+      "verdict": "INCONCLUSIVE",
+      "total_windows": 0,
+      "avg_lift": 0,
+      "avg_precision_at_50": 0,
+      "avg_recall_at_50": 0,
+      "total_sample_size": 0,
+      "windows": [],
+      "reason": "No valid walk-forward windows (dataset too small or too short time range)"
+    },
+    {
+      "hypothesis_id": "h_002",
+      "name": "Fast cuts correlate with breakout",
+      "verdict": "INCONCLUSIVE",
+      "total_windows": 0,
+      "avg_lift": 0,
+      "avg_precision_at_50": 0,
+      "avg_recall_at_50": 0,
+      "total_sample_size": 0,
+      "windows": [],
+      "reason": "No valid walk-forward windows (dataset too small or too short time range)"
+    },
+    {
+      "hypothesis_id": "h_003",
+      "name": "Face-present videos outperform no-face",
+      "verdict": "INCONCLUSIVE",
+      "total_windows": 0,
+      "avg_lift": 0,
+      "avg_precision_at_50": 0,
+      "avg_recall_at_50": 0,
+      "total_sample_size": 0,
+      "windows": [],
+      "reason": "No valid walk-forward windows (dataset too small or too short time range)"
+    }
+  ]
+}
