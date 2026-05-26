@@ -77,6 +77,11 @@ class FFmpegRunner:
                 cmd.extend(["-map", f"[a_o{i}]"])
                 
             cmd.extend([
+                "-c:v", "libx264",
+                "-crf", "18",
+                "-pix_fmt", "yuv420p",
+                "-c:a", "aac",
+                "-b:a", "192k",
                 "-threads", str(THREAD_LIMIT),
                 "-preset", "veryfast",
                 str(output_paths[i])
@@ -113,8 +118,18 @@ class FFmpegRunner:
                 "-vf", ",".join(vf_list)
             ]
             
+            cmd.extend([
+                "-c:v", "libx264",
+                "-crf", "18",
+                "-pix_fmt", "yuv420p",
+            ])
+            
             if has_audio and af_list:
-                cmd.extend(["-af", ",".join(af_list)])
+                cmd.extend([
+                    "-c:a", "aac",
+                    "-b:a", "192k",
+                    "-af", ",".join(af_list)
+                ])
             elif not has_audio:
                 cmd.append("-an")
                 

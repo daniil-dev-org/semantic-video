@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from ..core.logging import setup_logger
 from ..core.storage import init_storage
@@ -57,11 +59,17 @@ app.add_middleware(
 # Include routes
 app.include_router(jobs_router, prefix="/api")
 
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
 def read_root():
-    return {
-        "service": "Semantic Video Processing API",
-        "version": "1.0.0",
-        "docs_url": "/docs",
-        "status": "healthy"
-    }
+    html_path = Path(__file__).parent / "index.html"
+    if html_path.exists():
+        return html_path.read_text(encoding="utf-8")
+    return """
+    <html>
+        <head><title>Semantic Video Portal</title></head>
+        <body style="font-family: sans-serif; background: #0b0f19; color: #fff; text-align: center; padding-top: 50px;">
+            <h1>Web Portal Template Missing</h1>
+            <p>Please upload index.html to app/api/index.html</p>
+        </body>
+    </html>
+    """

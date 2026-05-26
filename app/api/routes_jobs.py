@@ -1,7 +1,8 @@
 import json
+import shutil
 from pathlib import Path
 from datetime import datetime, timezone
-from fastapi import APIRouter, HTTPException, BackgroundTasks
+from fastapi import APIRouter, HTTPException, BackgroundTasks, UploadFile, File, Form
 from fastapi.responses import FileResponse, JSONResponse
 from typing import List
 
@@ -177,3 +178,70 @@ def cancel_job(job_id: str):
     
     logger.info(f"Job {job_id} canceled successfully (subprocesses killed: {killed})")
     return {"status": "CANCELLED", "message": f"Job {job_id} cancelled successfully."}
+
+
+@router.get("/nextcloud/files")
+def list_nextcloud_files():
+    """List available files in the Nextcloud staging folder (uploads/accepted)."""
+    from ..core.config import UPLOADS_DIR
+    accepted_dir = UPLOADS_DIR / "accepted"
+    files = []
+    if accepted_dir.exists():
+        for f in accepted_dir.glob("*.mp4"):
+            size_mb = f.stat().st_size / (1024 * 1024)
+            files.append({
+                "name": f.name,
+                "path": f"storage/uploads/accepted/{f.name}",
+                "size_mb": round(size_mb, 2)
+            })
+    return files
+
+
+@router.post("/upload", response_model=JobCreateResponse)
+def upload_and_start_job(
+    background_tasks: BackgroundTasks,
+    file: UploadFile = File(...),
+    profile: str = Form("light_ab_test"),
+    variants: int = Form(4),
+    extract_features: bool = Form(True),
+    generate_proxy: bool = Form(True)
+):
+    """Upload a raw video file and immediately trigger a processing job."""
+    from ..core.config import UPLOADS_DIR
+    accepted_dir = UPLOADS_DIR / "accepted"
+    accepted_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Save the uploaded file
+    target_path = accepted_dir / file.filename
+    try:
+        with target_path.open("wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+    except Exception as e:
+        logger.error(f"Failed to save uploaded file {file.filename}: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to save uploaded file: {str(e)}")
+        
+    input_path = f"storage/uploads/accepted/{file.filename}"
+    resolved_path = (BASE_DIR / input_path).resolve()
+    
+    # Generate job ID and register in database
+    job_id = generate_job_id()
+    try:
+        job = SQLRepository.create_job(
+            job_id=job_id,
+            input_path=str(resolved_path),
+            profile=profile,
+            variants=variants,
+            extract_features=extract_features,
+            generate_proxy=generate_proxy
+        )
+    except Exception as e:
+        logger.error(f"Failed to create job in DB: {e}")
+        raise HTTPException(status_code=500, detail="Database write failure.")
+        
+    logger.info(f"Uploaded {file.filename} and queued job {job_id}")
+    
+    # Wake up worker
+    from ..workers.worker import trigger_worker_wakeup
+    background_tasks.add_task(trigger_worker_wakeup)
+    
+    return JobCreateResponse(job_id=job_id, status=job.status)
