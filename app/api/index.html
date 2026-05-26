@@ -991,6 +991,9 @@
     </main>
 
     <script>
+        // Resolve API base path dynamically to support both localhost and subpath routing (like /semantic/)
+        const apiBase = window.location.pathname.endsWith('/') ? window.location.pathname + 'api' : window.location.pathname + '/api';
+
         let selectedSource = 'upload';
         let selectedNextcloudFile = null;
         let activeJobId = null;
@@ -1053,7 +1056,7 @@
         async function fetchNextcloudFiles() {
             const container = document.getElementById('nextcloud-files-container');
             try {
-                const response = await fetch('/api/nextcloud/files');
+                const response = await fetch(`${apiBase}/nextcloud/files`);
                 if (!response.ok) throw new Error('Failed to load nextcloud files');
                 const files = await response.json();
                 
@@ -1120,7 +1123,7 @@
                     
                     updateStatusDisplay('QUEUED', 'Загрузка видеофайла на сервер...', 5.0);
                     
-                    response = await fetch('/api/upload', {
+                    response = await fetch(`${apiBase}/upload`, {
                         method: 'POST',
                         body: formData
                     });
@@ -1132,7 +1135,7 @@
                     
                     updateStatusDisplay('QUEUED', 'Отправка команды для файла Nextcloud...', 10.0);
                     
-                    response = await fetch('/api/jobs', {
+                    response = await fetch(`${apiBase}/jobs`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
@@ -1186,7 +1189,7 @@
                 if (!activeJobId) return;
                 
                 try {
-                    const response = await fetch(`/api/jobs/${activeJobId}`);
+                    const response = await fetch(`${apiBase}/jobs/${activeJobId}`);
                     if (!response.ok) throw new Error('Failed to query job status');
                     const job = await response.json();
                     
@@ -1223,7 +1226,7 @@
         async function loadJobResults() {
             try {
                 // 1. Fetch Outputs
-                const resOut = await fetch(`/api/jobs/${activeJobId}/outputs`);
+                const resOut = await fetch(`${apiBase}/jobs/${activeJobId}/outputs`);
                 if (resOut.ok) {
                     const outputs = await resOut.json();
                     const list = document.getElementById('monitor-artifacts-list');
@@ -1241,7 +1244,7 @@
                                         <span class="artifact-sub">${o.type.toUpperCase()} | ${o.size_mb.toFixed(3)} MB</span>
                                     </div>
                                 </div>
-                                <a href="/api/jobs/${activeJobId}/sidecar" class="artifact-download-btn" target="_blank">
+                                <a href="${apiBase}/jobs/${activeJobId}/sidecar" class="artifact-download-btn" target="_blank">
                                     <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0L8 8m4-4v12"></path></svg>
                                     Открыть
                                 </a>
@@ -1252,7 +1255,7 @@
                 }
 
                 // 2. Fetch Sidecar
-                const resSidecar = await fetch(`/api/jobs/${activeJobId}/sidecar`);
+                const resSidecar = await fetch(`${apiBase}/jobs/${activeJobId}/sidecar`);
                 if (resSidecar.ok) {
                     const sidecar = await resSidecar.json();
                     
@@ -1284,7 +1287,7 @@
                 }
 
                 // 3. Render QA report
-                const resReport = await fetch(`/api/jobs/${activeJobId}/outputs`);
+                const resReport = await fetch(`${apiBase}/jobs/${activeJobId}/outputs`);
                 if (resReport.ok) {
                     const outputs = await resReport.json();
                     const reportOut = outputs.find(o => o.type === 'quality_report');
