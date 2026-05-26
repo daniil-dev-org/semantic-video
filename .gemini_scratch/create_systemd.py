@@ -20,7 +20,7 @@ ExecStart=/usr/bin/podman run --name semantic-video \\
     --cpus=1.0 --memory=2g \\
     -p 8096:8000 \\
     --network nextcloud-net \\
-    -v /srv/video-stage:/app/storage/uploads:ro \\
+    -v /srv/video-stage:/app/storage/uploads:rw \\
     -v /srv/video-outputs:/app/storage/outputs:rw \\
     -v /srv/semantic-video-db:/app/storage:rw \\
     -v /opt/semantic-video/profiles:/app/profiles:ro \\
