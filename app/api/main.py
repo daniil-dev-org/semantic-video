@@ -27,10 +27,15 @@ async def lifespan(app: FastAPI):
     from ..workers.worker import start_worker, stop_worker
     start_worker()
     
+    # 5. Start Redis listener (optional — only if REDIS_ADDR is set)
+    from ..workers.redis_listener import start_redis_listener, stop_redis_listener
+    start_redis_listener()
+    
     yield
     
     # Shutdown sequence
     logger.info("Stopping Semantic Video Service...")
+    stop_redis_listener()
     stop_worker()
 
 app = FastAPI(

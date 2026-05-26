@@ -27,5 +27,11 @@ matplotlib>=3.7
 # Progress
 tqdm>=4.65
 
+# FFmpeg Python bindings
+ffmpeg-python>=0.2
+
+# Redis (optional — for production Redis Stream integration)
+redis>=5.0
+
 # Optional: imageio-ffmpeg as ffmpeg fallback
 # imageio-ffmpeg>=0.4
